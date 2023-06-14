@@ -71,10 +71,11 @@ console.log(`The word "et" appears ${etCounter} times in the string`);
 
 //BONUS 2
 
-//as they ask you to compare de value of the string i take in count the uppercase and the simbols in order to be a perfect palindrome
 
 
-const phraseToCheck = "step on no pets";
+
+
+let phraseToCheck = "Amor, Roma";
 
 let reversePhrase = "";
 
@@ -82,7 +83,14 @@ for (let reverseCheck = phraseToCheck.length -1; reverseCheck >= 0; reverseCheck
   reversePhrase += phraseToCheck[reverseCheck];
 }
 
-//console.log(reversePhrase);
+
+phraseToCheck = phraseToCheck.replace(/[^\w\s]/gi, '').replace(/\s+/g, '');
+
+phraseToCheck = phraseToCheck.toUpperCase();
+
+reversePhrase = reversePhrase.replace(/[^\w\s]/gi, '').replace(/\s+/g, '');
+reversePhrase = reversePhrase.toUpperCase();
+
 
 if (phraseToCheck === reversePhrase) {
   console.log(`It's a palindrome!`);
@@ -93,24 +101,32 @@ else {
 
 
 
+
 // LET'S TRY BONUS 2 WITH A FUNCTION
 
 
-const phrase1 = "A man, a plan, a canal, Panama!";
-const phrase2 = "Amor, Roma";
-const phrase3 = "race car";
-const phrase4 = "stack cats";
-const phrase5 = "step on no pets";
-const phrase6 = "taco cat";
-const phrase7 = "put it up";
-const phrase8 = "Was it a car or a cat I saw?\" and \"No 'x' in Nixon";
+let phrase1 = "A man, a plan, a canal, Panama!";
+let phrase2 = "Amor, Roma";
+let phrase3 = "race car";
+let phrase4 = "stack cats";
+let phrase5 = "step on no pets";
+let phrase6 = "taco cat";
+let phrase7 = "put it up";
+let phrase8 = "Was it a car or a cat I saw?";
+let phrase9 = "No 'x' in Nixon";
 
-function palindromeCheck (ToCheck) {
+function palindromeCheck(ToCheck) {
   let reversePhrase = "";
  for (let reverseCheck = ToCheck.length -1; reverseCheck >= 0; reverseCheck -= 1) {
   reversePhrase += ToCheck[reverseCheck];
 }
 
+ToCheck = ToCheck.replace(/[^\w\s]/gi, '').replace(/\s+/g, '');
+
+ToCheck = ToCheck.toUpperCase();
+
+reversePhrase = reversePhrase.replace(/[^\w\s]/gi, '').replace(/\s+/g, '');
+reversePhrase = reversePhrase.toUpperCase();  
 
 if (ToCheck === reversePhrase) {
   return console.log(`It's a palindrome!`);
@@ -128,3 +144,4 @@ palindromeCheck(phrase5);
 palindromeCheck(phrase6);
 palindromeCheck(phrase7);
 palindromeCheck(phrase8);
+palindromeCheck(phrase9);
